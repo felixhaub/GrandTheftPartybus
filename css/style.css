@@ -18,3 +18,43 @@ div#main {
 	line-height: 300px;
 	color: darkgreen;
 }
+
+.favButton>div {
+	width: 100%;
+	background-color: lightgrey;
+	margin-bottom: 15px;
+}
+
+.favButton:hover, .rightColButton:hover {
+	background-color: darkgreen;
+	text-decoration: none;
+}
+
+.favTitle {
+	padding: 5px;
+	background-color: darkgreen;
+	color: white;
+}
+
+.favContent {
+	padding: 5px;
+	color: black;
+}
+
+.rightColButton>div {
+	width: 100%;
+	background-color: lightgrey;
+	margin-bottom: 15px;
+	height: 100px;
+}
+
+.rightColButton>div:hover, .favButton>div:hover {
+	background-color: darkgreen;
+}
+
+.rightColContent {
+	padding-left: 10px;
+	color: black;
+	font-size: xx-large;
+	line-height: 100px;
+}

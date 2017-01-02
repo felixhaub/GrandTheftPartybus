@@ -161,13 +161,110 @@
 			 
 					<div>
 							<div id="step-1" class="">
-									Lorem ipsum
+								<div class="row">
+									<div class="col-md-4">
+										<div class="input-group">
+										  <span class="input-group-addon">Art</span>
+										  <select class="form-control" id="selConfArt">
+										    <option>Autonom</option>
+										    <option>Manuell</option>
+										  </select>
+										</div>
+										<div class="input-group">
+										  <span class="input-group-addon">Typ</span>
+										  <select class="form-control" id="selConfTyp">
+										    <option>Kleinwagen</option>
+										    <option>Kombi</option>
+										    <option>Partybus</option>
+										  </select>
+										</div>
+										<div class="input-group">
+										  <span class="input-group-addon">Anzahl Personen</span>
+										  <input class="form-control" type="number" name="selConfPers" value="1" />
+										</div>
+									</div>
+									<div class="col-md-8">
+										Preis: <span id="wizardStep1PricePerHour">x.xx€</span>/Stunde
+									</div>
+								</div>
 							</div>
 							<div id="step-2" class="">
-									dolor sit
+									<div class="row">
+										<div class="col-md-6">
+											<div class="input-group">
+											  <span class="input-group-addon">Ort</span>
+											  <select class="form-control" id="selConfArt">
+											    <option>Welfengarten 1, ...</option>
+											    <option>...</option>
+											  </select>
+											  <span class="input-group-btn">
+									        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-map-marker"></button>
+									      </span>
+											</div>
+											<div class="input-group">
+											  <span class="input-group-addon">Dauer (Stunden)</span>
+											  <input class="form-control" type="number" name="selConfPers" value="1" />
+											</div>
+										</div>
+										<div class="col-md-6">
+											Time-/Datepicker hier
+										</div>
+									</div>
 							</div>
 							<div id="step-3" class="">
-									amet
+									<div class="row">
+										<div class="col-md-6">
+											<label>Zugang:</label>
+											<div class="form-group">
+												<div class="radio">
+												  <label><input type="radio" name="optradio">Privat</label>
+												</div>
+												<div class="radio">
+												  <label><input type="radio" name="optradio">Öffentlich</label>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<label>Bestückung:</label>
+
+									    <div class="form-group row">
+									      <label class="col-sm-2">DJ</label>
+									      <div class="col-sm-10">
+									        <div class="form-check">
+									          <label class="form-check-label">
+									            <input class="form-check-input" type="checkbox"> + 10,20€/h
+									          </label>
+									        </div>
+									      </div>
+									      <label class="col-sm-2">Security</label>
+									      <div class="col-sm-10">
+									        <div class="form-check">
+									          <label class="form-check-label">
+									            <input class="form-check-input" type="checkbox"> + 20,00€/h
+									          </label>
+									        </div>
+									      </div>
+									      <label class="col-sm-2">Snacks</label>
+									      <div class="col-sm-10">
+									        <div class="form-check">
+									          <label class="form-check-label">
+									            <input class="form-check-input" type="checkbox"> + 20,00€
+									          </label>
+									        </div>
+									      </div>
+									      <label class="col-sm-2">Barkeeper</label>
+									      <div class="col-sm-10">
+									        <div class="form-check">
+									          <label class="form-check-label">
+									            <input class="form-check-input" type="checkbox"> + 10,00€/h
+									          </label>
+									        </div>
+									      </div>
+									       <label class="col-sm-2">Betrunkene</label>
+									       <input type="number" name="wizardDrunks" value="0"> + 2,00€/h
+									    </div>
+										</div>
+									</div>
 							</div>
 							<div id="step-4" class="">
 									Zusammenfassung und "Jetzt buchen"-Button

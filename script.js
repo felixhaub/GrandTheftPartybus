@@ -7,8 +7,10 @@ $(document).ready(function() {
 	})
 
 	$("#contentSteps > div").smartWizard({
-		theme: 'arrows'
+		theme: 'arrows', 
 	});
+	
+	
 })
 
 
@@ -23,8 +25,41 @@ var security = false;
 var snacks = false;
 var barkeeper = false;
 var betrunkene = "0";
+var zeit = "15:00";
+var preis = 0;
 
-
+function finalConclusion(){
+	document.getElementById("finalTyp").innerHTML = typ;
+	document.getElementById("finalArt").innerHTML = art;
+	document.getElementById("finalPerson").innerHTML = person;
+	document.getElementById("finalOrt").innerHTML = ort;
+	document.getElementById("finalDauer").innerHTML = dauer;
+	document.getElementById("finalZeit").innerHTML = zeit;
+	document.getElementById("finalZugang").innerHTML = zugang;
+	if(dj == true){
+		document.getElementById("finalDj").innerHTML = "DJ";
+		//preis += 10.20 * dauer;
+	} else{ 
+		document.getElementById("finalDj").innerHTML = "";
+	}
+	if(security == true){
+		document.getElementById("finalSecurity").innerHTML = "Security";
+	} else{ 
+		document.getElementById("finalSecurity").innerHTML = "";
+	}
+	if(snacks == true){
+		document.getElementById("finalSnacks").innerHTML = "Snacks";
+	} else{ 
+		document.getElementById("finalSnacks").innerHTML = "";
+	}
+	if(barkeeper == true){
+		document.getElementById("finalBarkeeper").innerHTML = "Barkeeper";
+	} else{ 
+		document.getElementById("finalBarkeeper").innerHTML = "";
+	}
+	document.getElementById("finalBetrunkene").innerHTML = betrunkene;
+	document.getElementById("finalPreis").innerHTML = preis;
+}
 
 function setArt(variable){
 	art = variable.value;

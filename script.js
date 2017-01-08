@@ -3,6 +3,7 @@ $(document).ready(function() {
 
 	$("#addBooking").click(function(){
 		$("#contentMain").hide();
+		$("#busWrapper").hide();
 		$("#contentSteps").show();
 	})
 
@@ -189,7 +190,11 @@ function onOrder(variable){
 	alert("Sie haben grad erfolgreich eine Waschmaschine erworben!");
 	$("#contentSteps").hide();
 	$("#contentMain").show();
-	
+	$("#busWrapper").show();
+
+	$("#busImg").animate({ 
+        left: "-=300px",
+      }, 2000 );
 
 }
 

@@ -1,10 +1,21 @@
 div#main {
 	margin-top: 50px;
 }
+#busImg, #busImg img {
+	position: relative;
+}
+
+body {
+	font-size: 14px;
+}
 
 .navbar-inverse .navbar-brand {
 	font-size: 1.8em;
 	color: white;
+}
+
+.input-group, .space {
+	margin: 20px 0px 20px 5px;
 }
 
 #newdiv {

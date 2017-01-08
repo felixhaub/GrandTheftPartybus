@@ -186,7 +186,9 @@
 										</div>
 									</div>
 									<div class="col-md-8">
-										Preis: <span id="wizardStep1PricePerHour"></span>€/Stunde
+                    <div class="space">
+									 	   Preis: <span class="space" id="wizardStep1PricePerHour"></span>€/Stunde
+                    </div>
 									</div>
 								</div>
 							</div>
@@ -212,7 +214,9 @@
 										<div class="col-md-6">
 											Time-/Datepicker hier
                       <div>
-                    Preis: <span id="wizardStep2Price"></span>€
+                        <div class="space">
+                           Preis: <span class="space" id="wizardStep2Price"></span>€
+                      </div>
                     </div>
 										</div>
 									</div>
@@ -270,7 +274,9 @@
 									       <input type="number" name="wizardDrunks" id="wizardBetrunkene" value="0" onchange="setBetrunkene(this)"> + 2,00€/h
 									    </div>
                        <div>
-                    Preis: <span id="wizardStep3Price"></span>€
+                       <div class="space">
+                    Preis: <span class="space" id="wizardStep3Price"></span>€
+                    </div>
                     </div>
 										</div>
 									</div>
@@ -296,8 +302,10 @@
 											Betrunkene: <span id="finalBetrunkene"></span>
 										</div>
 										<div class="col-md-3">
-											Preis: <span id="finalPreis"></span>€<br>
-											<button type="button" onclick="onOrder()" class="btn btn-primary">Jetzt kostenpflichtig buchen</button>
+                      <div class="space">
+  											Preis: <span id="finalPreis"></span>€<br>
+  											<button type="button" onclick="onOrder()" class="btn btn-primary">Jetzt kostenpflichtig buchen</button>
+                      </div>
 										</div>
 									</div>
 							</div>
@@ -310,7 +318,9 @@
 			<footer class="footer">
         <div class="container">
           <div id="busWrapper">
-            <img id="busImg" src="img/bus.png"/>
+            <div id="busImg">
+              <img src="img/bus.png"/>
+            </div>
           </div>
         </div>
       </footer>

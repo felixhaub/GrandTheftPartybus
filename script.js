@@ -193,7 +193,7 @@ function onOrder(variable){
 	$("#busWrapper").show();
 
 	$("#busImg").animate({ 
-        left: "-=300px",
+        left: "+=300px",
       }, 2000 );
 
 }

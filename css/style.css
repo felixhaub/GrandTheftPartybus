@@ -5,6 +5,10 @@ div#main {
 	position: relative;
 }
 
+.row {
+	padding: 20px;
+}
+
 body {
 	font-size: 14px;
 }
@@ -15,7 +19,7 @@ body {
 }
 
 .input-group, .space {
-	margin: 20px 0px 20px 5px;
+	margin: 0px 0px 20px 5px;
 }
 
 #newdiv {

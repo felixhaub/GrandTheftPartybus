@@ -2,6 +2,7 @@ $(document).ready(function() {
 	$("#contentSteps").hide();
 
 	$("#addBooking").click(function(){
+		init();
 		$("#contentMain").hide();
 		$("#busWrapper").hide();
 		$("#contentSteps").show();
@@ -19,11 +20,23 @@ $(document).ready(function() {
          }
     });
 
-	init();
 	calcPrice();
 
 })
 
+	art = "Autonom";
+	typ = "Kleinwagen";
+	person = "1";
+	ort = "Welfengarten 1";
+	dauer = "1";
+	zugang = "Öffentlich";
+	dj = false;
+	security = false;
+	snacks = false;
+	barkeeper = false;
+	betrunkene = "0";
+	zeit = "15:00";
+	
 function init(){
 	art = "Autonom";
 	typ = "Kleinwagen";
@@ -38,6 +51,9 @@ function init(){
 	betrunkene = "0";
 	zeit = "15:00";
 	datum = "Heute";
+
+	$('#contentSteps > div').smartWizard("reset")
+
 }
 
 function finalConclusion(){

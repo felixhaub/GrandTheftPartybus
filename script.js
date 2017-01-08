@@ -19,24 +19,11 @@ $(document).ready(function() {
          	finalConclusion();
          }
     });
-
+	init();
 	calcPrice();
 
 })
 
-	art = "Autonom";
-	typ = "Kleinwagen";
-	person = "1";
-	ort = "Welfengarten 1";
-	dauer = "1";
-	zugang = "Öffentlich";
-	dj = false;
-	security = false;
-	snacks = false;
-	barkeeper = false;
-	betrunkene = "0";
-	zeit = "15:00";
-	
 function init(){
 	art = "Autonom";
 	typ = "Kleinwagen";
@@ -211,7 +198,7 @@ function onOrder(variable){
 	width = $(window).width() / 1.5;
 
 
-	$("#busImg").animate({ left: "-=30px",}, 750 ).animate({ left: "+="+width,}, 10000);
+	$("#busImg").animate({ left: "0px",}, 0).animate({ left: "-=30px",}, 750 ).animate({ left: "+="+width,}, 10000);
 }
 
 

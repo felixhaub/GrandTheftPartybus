@@ -9,6 +9,7 @@ $(document).ready(function() {
 	$("#contentSteps > div").smartWizard({
 		theme: 'arrows',
 	});
+	
 	finalConclusion();
 
 })

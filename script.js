@@ -17,24 +17,25 @@ $(document).ready(function() {
          }
     });
 
+	init();
 	calcPrice();
 
 })
 
-
-var art = "Autonom";
-var typ = "Kleinwagen";
-var person = "1";
-var ort = "Welfengarten 1";
-var dauer = "1";
-var zugang = "Öffentlich";
-var dj = false;
-var security = false;
-var snacks = false;
-var barkeeper = false;
-var betrunkene = "0";
-var zeit = "15:00";
-//var price = 0;
+function init(){
+	art = "Autonom";
+	typ = "Kleinwagen";
+	person = "1";
+	ort = "Welfengarten 1";
+	dauer = "1";
+	zugang = "Öffentlich";
+	dj = false;
+	security = false;
+	snacks = false;
+	barkeeper = false;
+	betrunkene = "0";
+	zeit = "15:00";
+}
 
 function finalConclusion(){
 	calcPrice();
@@ -187,15 +188,14 @@ function setBetrunkene(variable){
 }
 
 function onOrder(variable){
-	alert("Sie haben grad erfolgreich eine Waschmaschine erworben!");
+	alert("Vielen Dank für Ihre Bestellung. Die Mitfahrgelegenheit ist schon zu Ihnen unterwegs!");
 	$("#contentSteps").hide();
 	$("#contentMain").show();
 	$("#busWrapper").show();
+	width = $(window).width() / 1.5;
 
 
-	$("#busImg").animate({ left: "-=30px",}, 750 ).animate({ left: "+=1000px",}, 10000);
-
-
+	$("#busImg").animate({ left: "-=30px",}, 750 ).animate({ left: "+="+width,}, 10000);
 }
 
 

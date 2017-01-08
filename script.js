@@ -7,10 +7,10 @@ $(document).ready(function() {
 	})
 
 	$("#contentSteps > div").smartWizard({
-		theme: 'arrows', 
+		theme: 'arrows',
 	});
-	
-	
+	finalConclusion();
+
 })
 
 
@@ -26,9 +26,10 @@ var snacks = false;
 var barkeeper = false;
 var betrunkene = "0";
 var zeit = "15:00";
-var preis = 0;
+var price = 0;
 
 function finalConclusion(){
+	clacPricePerHour();
 	document.getElementById("finalTyp").innerHTML = typ;
 	document.getElementById("finalArt").innerHTML = art;
 	document.getElementById("finalPerson").innerHTML = person;
@@ -36,37 +37,63 @@ function finalConclusion(){
 	document.getElementById("finalDauer").innerHTML = dauer;
 	document.getElementById("finalZeit").innerHTML = zeit;
 	document.getElementById("finalZugang").innerHTML = zugang;
+
+	var finalPrice = price;
 	if(dj == true){
 		document.getElementById("finalDj").innerHTML = "DJ";
+		finalPrice +=  10.20;
 		//preis += 10.20 * dauer;
-	} else{ 
+	} else{
 		document.getElementById("finalDj").innerHTML = "";
 	}
 	if(security == true){
 		document.getElementById("finalSecurity").innerHTML = "Security";
-	} else{ 
+		finalPrice +=  20;
+	} else{
 		document.getElementById("finalSecurity").innerHTML = "";
 	}
 	if(snacks == true){
 		document.getElementById("finalSnacks").innerHTML = "Snacks";
-	} else{ 
+	} else{
 		document.getElementById("finalSnacks").innerHTML = "";
 	}
 	if(barkeeper == true){
 		document.getElementById("finalBarkeeper").innerHTML = "Barkeeper";
-	} else{ 
+		finalPrice +=  10;
+	} else{
 		document.getElementById("finalBarkeeper").innerHTML = "";
 	}
 	document.getElementById("finalBetrunkene").innerHTML = betrunkene;
-	document.getElementById("finalPreis").innerHTML = preis;
+	if (betrunkene != 0) finalPrice += betrunkene *2 ;
+	finalPrice *= dauer;
+	if (snacks) finalPrice += 20;
+	document.getElementById("finalPreis").innerHTML = Math.ceil(finalPrice * 100) / 100;
+}
+
+function clacPricePerHour(){
+	if (art == "Autonom") price = 7.99;
+	if (art == "Manuell") price = 9.99;
+	if (typ == "Kleinwagen") price += 1;
+	if (typ == "Partybus") price += 2;
+	if (typ == "Kombi") price += 3;
+	document.getElementById('wizardStep1PricePerHour').innerHTML = price;
 }
 
 function setArt(variable){
 	art = variable.value;
+	finalConclusion();
 }
 
 function setTyp(variable){
 	typ = variable.value;
+	if (typ == "Partybus"){
+		document.getElementById('selConfArt').value = "Autonom"
+		art = "Autonom";
+		document.getElementById('selConfArt').disabled = true;
+	} else {
+		document.getElementById('selConfArt').disabled = false;
+	}
+	finalConclusion();
 }
 
 function setPerson(variable){
@@ -77,6 +104,7 @@ function setPerson(variable){
 		p = x.value;
 	}
 	person = p;
+	finalConclusion();
 }
 
 function setOrt(variable){
@@ -86,6 +114,7 @@ function setOrt(variable){
 function setActualPlace(){
 	ort = "Appelstrasse 4";
 	document.getElementById('selConfOrtID').value = ort;
+	finalConclusion();
 }
 
 function setDauer(variable){
@@ -96,28 +125,34 @@ function setDauer(variable){
 		p = x.value;
 	}
 	dauer = p;
+	finalConclusion();
 }
 
 //Time und datepicker functions HIER
 
 function setZugang(variable){
 	zugang = getCheckedRadio(variable.name);
+	finalConclusion();
 }
 
 function setDJ(variable){
 	dj = variable.checked;
+	finalConclusion();
 }
 
 function setSecurity(variable){
 	security = variable.checked;
+	finalConclusion();
 }
 
 function setSnacks(variable){
 	snacks = variable.checked;
+	finalConclusion();
 }
 
 function setBarkeeper(variable){
 	barkeeper = variable.checked;
+	finalConclusion();
 }
 
 function setBetrunkene(variable){
@@ -128,6 +163,7 @@ function setBetrunkene(variable){
 		p = x.value;
 	}
 	betrunkene = p;
+	finalConclusion();
 }
 
 

@@ -84,8 +84,8 @@ function calcPrice(){
 	finalPrice *= dauer;
 	if (snacks) finalPrice += 20;
 	document.getElementById("finalPreis").innerHTML = Math.ceil(finalPrice * 100) / 100;
-	//document.getElementById("wizardStep2Price").innerHTML = Math.ceil(finalPrice * 100) / 100;
-	//document.getElementById("wizardStep3Price").innerHTML = Math.ceil(finalPrice * 100) / 100;
+	document.getElementById("wizardStep2Price").innerHTML = Math.ceil(finalPrice * 100) / 100;
+	document.getElementById("wizardStep3Price").innerHTML = Math.ceil(finalPrice * 100) / 100;
 }
 
 function calcPricePerHour(){
@@ -183,6 +183,14 @@ function setBetrunkene(variable){
 	}
 	betrunkene = p;
 	calcPrice();
+}
+
+function onOrder(variable){
+	alert("Sie haben grad erfolgreich eine Waschmaschine erworben!");
+	$("#contentSteps").hide();
+	$("#contentMain").show();
+	
+
 }
 
 

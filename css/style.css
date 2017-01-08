@@ -2,6 +2,11 @@ div#main {
 	margin-top: 50px;
 }
 
+.navbar-inverse .navbar-brand {
+	font-size: 1.8em;
+	color: white;
+}
+
 #newdiv {
 	height: 300px;
 	background: lightgrey;

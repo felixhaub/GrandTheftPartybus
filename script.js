@@ -37,7 +37,10 @@ function init(){
 	barkeeper = false;
 	betrunkene = "0";
 	zeit = "15:00";
+	datum = "Heute";
+
 	$('#contentSteps > div').smartWizard("reset")
+
 }
 
 function finalConclusion(){
@@ -49,6 +52,7 @@ function finalConclusion(){
 	document.getElementById("finalOrt").innerHTML = ort;
 	document.getElementById("finalDauer").innerHTML = dauer;
 	document.getElementById("finalZeit").innerHTML = zeit;
+	document.getElementById("finalDatum").innerHTML = datum;
 	document.getElementById("finalZugang").innerHTML = zugang;
 }
 
@@ -105,6 +109,15 @@ function calcPricePerHour(){
 
 function setArt(variable){
 	art = variable.value;
+	calcPrice();
+}
+
+function setZeit(variable){
+	zeit = variable.value;
+	calcPrice();
+}
+function setDatum(variable){
+	datum = variable.value;
 	calcPrice();
 }
 

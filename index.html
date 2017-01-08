@@ -212,7 +212,8 @@
 											</div>
 										</div>
 										<div class="col-md-6">
-											<p>Date: <input type="text" id="datepicker"></p>
+											<p>Datum: <input type="text" id="datepicker" onchange="setDatum(this)"></p>
+                      <p>Zeit: <input type="text" onchange="setZeit(this)"></p>
                       <div>
                         <div class="space">
                            Preis: <span class="space" id="wizardStep2Price"></span>€
@@ -290,6 +291,7 @@
 										</div>
 										<div class="col-md-3">
 											Ort: <span id="finalOrt"></span><br>
+                      Datum: <span id="finalDatum"></span><br>
 											Zeit: <span id="finalZeit"></span><br>
 											Dauer: <span id="finalDauer"></span>
 										</div>

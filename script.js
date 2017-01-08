@@ -7,6 +7,8 @@ $(document).ready(function() {
 		$("#contentSteps").show();
 	})
 
+	$("#datepicker").datepicker();
+
 	$("#contentSteps > div").smartWizard({
 		theme: 'arrows',
 	});

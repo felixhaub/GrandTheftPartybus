@@ -12,6 +12,7 @@ $(document).ready(function() {
 
 	$("#contentSteps > div").smartWizard({
 		theme: 'arrows',
+		transitionEffect: 'fade',
 	});
 
 	$("#contentSteps > div").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
@@ -21,6 +22,7 @@ $(document).ready(function() {
     });
 
 	calcPrice();
+	$("#busWrapper").hide();
 
 })
 
@@ -221,10 +223,10 @@ function onOrder(variable){
 	$("#contentSteps").hide();
 	$("#contentMain").show();
 	$("#busWrapper").show();
-	width = $(window).width() / 1.5;
+	width = $(window).width() / 1.2;
 
 
-	$("#busImg").animate({ left: "-=30px",}, 750 ).animate({ left: "+="+width,}, 10000);
+	$("#busImg").animate({ left: "-=10px",}, 750 ).animate({ left: "+="+width,}, 10000);
 }
 
 

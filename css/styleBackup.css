@@ -4,16 +4,6 @@ div#main {
 #busImg, #busImg img {
 	position: relative;
 	width: 200px;
-	margin-bottom: -18px;
-}
-#busWrapper {
-	border-bottom: 10px solid #006064; 
-}
-.footer {
-	background-image: url("../img/people.png");
-	background-repeat: no-repeat;
-	background-size: 100px 100px;
-	background-position: center right;
 }
 .favButton div, .rightColButton div {
 	border-radius: 5px;
@@ -40,18 +30,20 @@ body, .form-control {
 
 #newdiv {
 	height: 300px;
-	background: #eeeeee;
+	background: lightgrey;
 	border-radius: 5px;
 	text-align: center;
 }
 
 #newdiv:hover {
-	
+	background: #006064;
+	color: white;
 }
 
 #newdiv:hover #plusgl {
-	font-size: 180px;
+	font-size: 140px;
 	line-height: 300px;
+	color: lightgrey;
 }
 
 #plusgl {
@@ -64,19 +56,14 @@ body, .form-control {
 
 .favButton>div {
 	width: 100%;
-	background-color: #eeeeee;
+	background-color: lightgrey;
 	margin-bottom: 15px;
-
-}
-
-body a {
-	color: black;
 }
 
 .favButton:hover, .rightColButton:hover {
 	background-color: #006064;
 	text-decoration: none;
-	color: #eeeeee;
+	color: white;
 }
 
 .favTitle {
@@ -87,7 +74,7 @@ body a {
 
 .favContent {
 	padding: 5px;
-	
+	color: black;
 }
 
 .navbar {
@@ -99,22 +86,18 @@ body a {
 }
 .rightColButton>div {
 	width: 100%;
-	background-color: #eeeeee;
+	background-color: lightgrey;
 	margin-bottom: 15px;
 	height: 100px;
-
-   
 }
 
 .rightColButton>div:hover, .favButton>div:hover {
 	background-color: #006064;
-	color: #eeeeee;
-
 }
 
 .rightColContent {
 	padding-left: 10px;
-	
+	color: black;
 	font-size: xx-large;
 	line-height: 100px;
 }

@@ -144,7 +144,7 @@
 					<a class="rightColButton" href="#">
 						<div>
 							<div class="rightColContent">
-								<span class="glyphicon glyphicon-cog" aria-hidden="true"/>Einstellungen
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Einstellungen
 							</div>
 						</div>
 					</a>
@@ -239,39 +239,39 @@
 											<label>Bestückung:</label>
 
 									    <div class="form-group row">
-									      <label class="col-sm-2">DJ</label>
-									      <div class="col-sm-10">
+									      <label class="col-sm-4">DJ</label>
+									      <div class="col-sm-8">
 									        <div class="form-check">
 									          <label class="form-check-label">
 									            <input class="form-check-input" type="checkbox" onchange="setDJ(this)"> + 10,20€/h
 									          </label>
 									        </div>
 									      </div>
-									      <label class="col-sm-2">Security</label>
-									      <div class="col-sm-10">
+									      <label class="col-sm-4">Security</label>
+									      <div class="col-sm-8">
 									        <div class="form-check">
 									          <label class="form-check-label">
 									            <input class="form-check-input" type="checkbox" onchange="setSecurity(this)"> + 20,00€/h
 									          </label>
 									        </div>
 									      </div>
-									      <label class="col-sm-2">Snacks</label>
-									      <div class="col-sm-10">
+									      <label class="col-sm-4">Snacks</label>
+									      <div class="col-sm-8">
 									        <div class="form-check">
 									          <label class="form-check-label">
 									            <input class="form-check-input" type="checkbox" onchange="setSnacks(this)"> + 20,00€
 									          </label>
 									        </div>
 									      </div>
-									      <label class="col-sm-2">Barkeeper</label>
-									      <div class="col-sm-10">
+									      <label class="col-sm-4">Barkeeper</label>
+									      <div class="col-sm-8">
 									        <div class="form-check">
 									          <label class="form-check-label">
 									            <input class="form-check-input" type="checkbox" onchange="setBarkeeper(this)"> + 10,00€/h
 									          </label>
 									        </div>
 									      </div>
-									       <label class="col-sm-2">Betrunkene</label>
+									       <label class="col-sm-4">Betrunkene</label>
 									       <input type="number" name="wizardDrunks" id="wizardBetrunkene" value="0" onchange="setBetrunkene(this)"> + 2,00€/h
 									    </div>
                        <div>
@@ -296,12 +296,14 @@
 											Dauer: <span id="finalDauer"></span>
 										</div>
 										<div class="col-md-3">
+                    <div id="data">
 											<p id="finalZugang"></p>
 											<p id="finalDj"></p>
 											<p id="finalSecurity"></p>
 											<p id="finalSnacks"></p>
 											<p id="finalBarkeeper"></p>
 											Betrunkene: <span id="finalBetrunkene"></span>
+                      </div>
 										</div>
 										<div class="col-md-3">
                       <div class="space">
@@ -317,8 +319,10 @@
 
 			<hr>
 
-			<footer class="footer">
-        <div class="container">
+			
+		</div> <!-- /container -->
+<footer class="footer">
+        <div class="blub">
           <div id="busWrapper">
             <div id="busImg">
               <img src="img/bus.png"/>
@@ -326,8 +330,6 @@
           </div>
         </div>
       </footer>
-		</div> <!-- /container -->
-
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->

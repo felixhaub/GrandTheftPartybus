@@ -2,7 +2,14 @@ $(document).ready(function() {
 	$("#contentSteps").hide();
 
 	$("#addBooking").click(function(){
-		init();
+		init(false);
+		$("#contentMain").hide();
+		$("#busWrapper").hide();
+		$("#contentSteps").show();
+	})
+
+	$("#addBookingPartybus").click(function(){
+		init(true);
 		$("#contentMain").hide();
 		$("#busWrapper").hide();
 		$("#contentSteps").show();
@@ -29,9 +36,15 @@ $(document).ready(function() {
 
 })
 
-function init(){
+function init(partybusSelected){
 	art = "Autonom";
-	typ = "Kleinwagen";
+	if (partybusSelected) {
+		typ = "Partybus";
+		$("#selConfTyp").val("Partybus");
+	} else {
+		typ = "Kleinwagen";
+		$("#selConfTyp").val("Kleinwagen");
+	}
 	person = "1";
 	ort = "Welfengarten 1";
 	dauer = "1";

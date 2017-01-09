@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$("#contentSteps").hide();
+	$("#logout").hide();
 
 	$("#addBooking").click(function(){
 		init(false);
@@ -253,4 +254,9 @@ function getCheckedRadio(name) {
 		}
 	}
 	return null;
+}
+
+function loginToggle() {
+	$("#login").toggle();
+	$("#logout").toggle();
 }

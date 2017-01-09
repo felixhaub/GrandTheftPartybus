@@ -34,7 +34,7 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
-    <link href="css/style.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -51,15 +51,23 @@
 					<a class="navbar-brand" href="#">Grand Theft Partybus</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
-					<form class="navbar-form navbar-right">
-						<div class="form-group">
-							<input type="text" placeholder="Email" class="form-control">
-						</div>
-						<div class="form-group">
-							<input type="password" placeholder="Password" class="form-control">
-						</div>
-						<button type="submit" class="btn btn-success">Sign in</button>
-					</form>
+					<div id="login">
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" placeholder="Email" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="password" placeholder="Password" class="form-control">
+							</div>
+							<button onclick="loginToggle()" class="btn btn-success">Sign in</button>
+						</form>
+					</div>
+					<div id="logout">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Dieter B. Trunken</a></li>
+							<li><button class="btn btn-danger navbar-btn" onclick="loginToggle()" href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"/></button></li>
+						</ul>
+					</div>
 				</div><!--/.navbar-collapse -->
 			</div>
 		</nav>
@@ -168,16 +176,16 @@
 										<div class="input-group">
 										  <span class="input-group-addon">Art</span>
 										  <select onchange="setArt(this)" class="form-control" id="selConfArt">
-										    <option value="Autonom">Autonom</option>
-										    <option value="Manuell">Manuell</option>
+											<option value="Autonom">Autonom</option>
+											<option value="Manuell">Manuell</option>
 										  </select>
 										</div>
 										<div class="input-group">
 										  <span class="input-group-addon">Typ</span>
 										  <select onchange="setTyp(this)" class="form-control" id="selConfTyp">
-										    <option value="Kleinwagen">Kleinwagen</option>
-										    <option value="Kombi">Kombi</option>
-										    <option value="Partybus">Partybus</option>
+											<option value="Kleinwagen">Kleinwagen</option>
+											<option value="Kombi">Kombi</option>
+											<option value="Partybus">Partybus</option>
 										  </select>
 										</div>
 										<div class="input-group">
@@ -186,9 +194,9 @@
 										</div>
 									</div>
 									<div class="col-md-8">
-                    <div class="space">
-									 	   Preis: <span class="space" id="wizardStep1PricePerHour"></span>€/Stunde
-                    </div>
+					<div class="space">
+										   Preis: <span class="space" id="wizardStep1PricePerHour"></span>€/Stunde
+					</div>
 									</div>
 								</div>
 							</div>
@@ -198,13 +206,13 @@
 											<div class="input-group">
 											  <span class="input-group-addon">Ort</span>
 											  <!--<select class="form-control" id="selConfArt">
-											    <option>Welfengarten 1, ...</option>
-											    <option>...</option>
+												<option>Welfengarten 1, ...</option>
+												<option>...</option>
 											  </select>-->
 												<input class="form-control" type="text"value="Welfengarten 1" name="selConfOrt" id="selConfOrtID" placeholder="Ort eingeben" onchange="setOrt(this)">
 											  <span class="input-group-btn">
-									        <button class="btn btn-secondary" type="button" onclick="setActualPlace()"><span class="glyphicon glyphicon-map-marker" ></button>
-									      </span>
+											<button class="btn btn-secondary" type="button" onclick="setActualPlace()"><span class="glyphicon glyphicon-map-marker" ></button>
+										  </span>
 											</div>
 											<div class="input-group">
 											  <span class="input-group-addon">Dauer (Stunden)</span>
@@ -213,12 +221,12 @@
 										</div>
 										<div class="col-md-6">
 											<p>Datum: <input type="text" id="datepicker" onchange="setDatum(this)"></p>
-                      <p>Zeit: <input type="text" onchange="setZeit(this)"></p>
-                      <div>
-                        <div class="space">
-                           Preis: <span class="space" id="wizardStep2Price"></span>€
-                      </div>
-                    </div>
+					  <p>Zeit: <input type="text" onchange="setZeit(this)"></p>
+					  <div>
+						<div class="space">
+						   Preis: <span class="space" id="wizardStep2Price"></span>€
+					  </div>
+					</div>
 										</div>
 									</div>
 							</div>
@@ -238,47 +246,47 @@
 										<div class="col-md-6">
 											<label>Bestückung:</label>
 
-									    <div class="form-group row">
-									      <label class="col-sm-4">DJ</label>
-									      <div class="col-sm-8">
-									        <div class="form-check">
-									          <label class="form-check-label">
-									            <input class="form-check-input" type="checkbox" onchange="setDJ(this)"> + 10,20€/h
-									          </label>
-									        </div>
-									      </div>
-									      <label class="col-sm-4">Security</label>
-									      <div class="col-sm-8">
-									        <div class="form-check">
-									          <label class="form-check-label">
-									            <input class="form-check-input" type="checkbox" onchange="setSecurity(this)"> + 20,00€/h
-									          </label>
-									        </div>
-									      </div>
-									      <label class="col-sm-4">Snacks</label>
-									      <div class="col-sm-8">
-									        <div class="form-check">
-									          <label class="form-check-label">
-									            <input class="form-check-input" type="checkbox" onchange="setSnacks(this)"> + 20,00€
-									          </label>
-									        </div>
-									      </div>
-									      <label class="col-sm-4">Barkeeper</label>
-									      <div class="col-sm-8">
-									        <div class="form-check">
-									          <label class="form-check-label">
-									            <input class="form-check-input" type="checkbox" onchange="setBarkeeper(this)"> + 10,00€/h
-									          </label>
-									        </div>
-									      </div>
-									       <label class="col-sm-4">Betrunkene</label>
-									       <input type="number" name="wizardDrunks" id="wizardBetrunkene" value="0" onchange="setBetrunkene(this)"> + 2,00€/h
-									    </div>
-                       <div>
-                       <div class="space">
-                    Preis: <span class="space" id="wizardStep3Price"></span>€
-                    </div>
-                    </div>
+										<div class="form-group row">
+										  <label class="col-sm-4">DJ</label>
+										  <div class="col-sm-8">
+											<div class="form-check">
+											  <label class="form-check-label">
+												<input class="form-check-input" type="checkbox" onchange="setDJ(this)"> + 10,20€/h
+											  </label>
+											</div>
+										  </div>
+										  <label class="col-sm-4">Security</label>
+										  <div class="col-sm-8">
+											<div class="form-check">
+											  <label class="form-check-label">
+												<input class="form-check-input" type="checkbox" onchange="setSecurity(this)"> + 20,00€/h
+											  </label>
+											</div>
+										  </div>
+										  <label class="col-sm-4">Snacks</label>
+										  <div class="col-sm-8">
+											<div class="form-check">
+											  <label class="form-check-label">
+												<input class="form-check-input" type="checkbox" onchange="setSnacks(this)"> + 20,00€
+											  </label>
+											</div>
+										  </div>
+										  <label class="col-sm-4">Barkeeper</label>
+										  <div class="col-sm-8">
+											<div class="form-check">
+											  <label class="form-check-label">
+												<input class="form-check-input" type="checkbox" onchange="setBarkeeper(this)"> + 10,00€/h
+											  </label>
+											</div>
+										  </div>
+										   <label class="col-sm-4">Betrunkene</label>
+										   <input type="number" name="wizardDrunks" id="wizardBetrunkene" value="0" onchange="setBetrunkene(this)"> + 2,00€/h
+										</div>
+					   <div>
+					   <div class="space">
+					Preis: <span class="space" id="wizardStep3Price"></span>€
+					</div>
+					</div>
 										</div>
 									</div>
 							</div>
@@ -291,25 +299,25 @@
 										</div>
 										<div class="col-md-3">
 											Ort: <span id="finalOrt"></span><br>
-                      Datum: <span id="finalDatum"></span><br>
+					  Datum: <span id="finalDatum"></span><br>
 											Zeit: <span id="finalZeit"></span><br>
 											Dauer: <span id="finalDauer"></span>
 										</div>
 										<div class="col-md-3">
-                    <div id="data">
+					<div id="data">
 											<p id="finalZugang"></p>
 											<p id="finalDj"></p>
 											<p id="finalSecurity"></p>
 											<p id="finalSnacks"></p>
 											<p id="finalBarkeeper"></p>
 											Betrunkene: <span id="finalBetrunkene"></span>
-                      </div>
+					  </div>
 										</div>
 										<div class="col-md-3">
-                      <div class="space">
-  											Preis: <span id="finalPreis"></span>€<br>
-  											<button id="orderbtn" type="button" onclick="onOrder()" class="btn btn-primary">Jetzt kostenpflichtig buchen</button>
-                      </div>
+					  <div class="space">
+											Preis: <span id="finalPreis"></span>€<br>
+											<button id="orderbtn" type="button" onclick="onOrder()" class="btn btn-primary">Jetzt kostenpflichtig buchen</button>
+					  </div>
 										</div>
 									</div>
 							</div>
@@ -322,14 +330,14 @@
 			
 		</div> <!-- /container -->
 <footer class="footer">
-        <div class="blub">
-          <div id="busWrapper">
-            <div id="busImg">
-              <img src="img/bus.png"/>
-            </div>
-          </div>
-        </div>
-      </footer>
+		<div class="blub">
+		  <div id="busWrapper">
+			<div id="busImg">
+			  <img src="img/bus.png"/>
+			</div>
+		  </div>
+		</div>
+	  </footer>
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->
@@ -346,7 +354,7 @@
 		<script src="assets/js/jquery.smartWizard.min.js"></script>
 		<!-- Our custom JS -->
 		<script src="script.js"></script>
-    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+	<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
 
   <script src="jqueryui/jquery-ui.min.js"></script>
 	</body>

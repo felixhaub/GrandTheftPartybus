@@ -6,6 +6,9 @@ div#main {
 	width: 200px;
 	margin-bottom: -18px;
 }
+#busImg {
+	left:20px;
+}
 #busWrapper {
 	border-bottom: 10px solid #006064; 
 }

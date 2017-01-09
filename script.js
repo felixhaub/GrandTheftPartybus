@@ -231,7 +231,7 @@ function onOrder(variable){
 
 
 
-	$("#busImg").animate({ left: "0px",}, 0).animate({ left: "-=10px",}, 750 ).animate({ left: "+="+width,}, 10000);
+	$("#busImg").animate({ left: "0px",}, 0).animate({ left: "-=10px",}, 750 ).animate({ left: "+="+width,}, 120000);
 
 }
 

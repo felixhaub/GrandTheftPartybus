@@ -13,6 +13,9 @@ $(document).ready(function() {
 	$("#contentSteps > div").smartWizard({
 		theme: 'arrows',
 		transitionEffect: 'fade',
+		toolbarSettings: {
+			toolbarExtraButtons: [$('<button class="btn btn-danger" onclick="cancelWizard()">Cancel</button>')]
+		}
 	});
 
 	$("#contentSteps > div").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
@@ -216,6 +219,12 @@ function onOrder(variable){
 
 	$("#busImg").animate({ left: "0px",}, 0).animate({ left: "-=10px",}, 750 ).animate({ left: "+="+width,}, 10000);
 
+}
+
+function cancelWizard() {
+	$('#contentSteps > div').smartWizard("reset");
+	$("#contentMain").show();
+	$("#contentSteps").hide();
 }
 
 

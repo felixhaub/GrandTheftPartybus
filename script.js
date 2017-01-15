@@ -17,6 +17,10 @@ $(document).ready(function() {
 	})
 
 	$("#datepicker").datepicker();
+	$("#timepicker").wickedpicker({
+		twentyFour: true,
+		minutesInterval: 5
+	});
 
 	$("#contentSteps > div").smartWizard({
 		theme: 'arrows',
@@ -70,6 +74,8 @@ function finalConclusion(){
 	document.getElementById("finalPerson").innerHTML = person;
 	document.getElementById("finalOrt").innerHTML = ort;
 	document.getElementById("finalDauer").innerHTML = dauer;
+	// get chosen time from timepicker
+	zeit = $("#timepicker").wickedpicker('time');
 	document.getElementById("finalZeit").innerHTML = zeit;
 	document.getElementById("finalDatum").innerHTML = datum;
 	document.getElementById("finalZugang").innerHTML = zugang;
@@ -132,6 +138,10 @@ function setArt(variable){
 }
 
 function setZeit(variable){
+	/**
+	*	We don't update the time-variable on every change now.
+	*	This could be completely removed in future
+	*/
 	zeit = variable.value;
 	calcPrice();
 }

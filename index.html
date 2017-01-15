@@ -34,7 +34,7 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
-	<link href="css/style.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -130,7 +130,7 @@
 				<div class="col-md-4">
 					<h2>Auto buchen</h2>
 					<a id="addBooking" class="newbutton" href="#"><div id="newdiv"><span class="glyphicon glyphicon-plus" id="plusgl" aria-hidden="true"/></div></a>
-			 </div>
+				</div>
 				<div class="col-md-4">
 					<h2>&nbsp;</h2>
 					<a id="addBookingPartybus" class="rightColButton" href="#">
@@ -163,181 +163,180 @@
 			<div id="contentSteps" class="row">
 				<div class="col-md-12">
 					<ul>
-							<li><a href="#step-1">Auto-Konfiguration</a></li>
-							<li><a href="#step-2">Ort und Zeit</a></li>
-							<li><a href="#step-3">Extras</a></li>
-							<li><a href="#step-4" onclick="finalConclusion()">Zusammenfassung</a></li>
+						<li><a href="#step-1">Auto-Konfiguration</a></li>
+						<li><a href="#step-2">Ort und Zeit</a></li>
+						<li><a href="#step-3">Extras</a></li>
+						<li><a href="#step-4" onclick="finalConclusion()">Zusammenfassung</a></li>
 					</ul>
 
 					<div>
-							<div id="step-1" class="">
-								<div class="row">
-									<div class="col-md-4">
-										<div class="input-group">
-										  <span class="input-group-addon">Art</span>
-										  <select onchange="setArt(this)" class="form-control" id="selConfArt">
-											<option value="Autonom">Autonom</option>
-											<option value="Manuell">Manuell</option>
-										  </select>
-										</div>
-										<div class="input-group">
-										  <span class="input-group-addon">Typ</span>
-										  <select onchange="setTyp(this)" class="form-control" id="selConfTyp">
-											<option value="Kleinwagen">Kleinwagen</option>
-											<option value="Kombi">Kombi</option>
-											<option value="Partybus">Partybus</option>
-										  </select>
-										</div>
-										<div class="input-group">
-										  <span class="input-group-addon">Anzahl Personen</span>
-										  <input class="form-control" type="number" name="selConfPers" value="1" id ="wizardPersons" onchange="setPerson(this)"/>
-										</div>
+						<div id="step-1" class="">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="input-group">
+									  <span class="input-group-addon">Art</span>
+									  <select onchange="setArt(this)" class="form-control" id="selConfArt">
+										<option value="Autonom">Autonom</option>
+										<option value="Manuell">Manuell</option>
+									  </select>
 									</div>
-									<div class="col-md-8">
-					<div class="space">
-										   Preis: <span class="space" id="wizardStep1PricePerHour"></span>€/Stunde
-					</div>
+									<div class="input-group">
+									  <span class="input-group-addon">Typ</span>
+									  <select onchange="setTyp(this)" class="form-control" id="selConfTyp">
+										<option value="Kleinwagen">Kleinwagen</option>
+										<option value="Kombi">Kombi</option>
+										<option value="Partybus">Partybus</option>
+									  </select>
+									</div>
+									<div class="input-group">
+									  <span class="input-group-addon">Anzahl Personen</span>
+									  <input class="form-control" type="number" name="selConfPers" value="1" id ="wizardPersons" onchange="setPerson(this)"/>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="space">
+									   Preis: <span class="space" id="wizardStep1PricePerHour"></span>€/Stunde
 									</div>
 								</div>
 							</div>
-							<div id="step-2" class="">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="input-group">
-											  <span class="input-group-addon">Ort</span>
-											  <!--<select class="form-control" id="selConfArt">
-												<option>Welfengarten 1, ...</option>
-												<option>...</option>
-											  </select>-->
-												<input class="form-control" type="text"value="Welfengarten 1" name="selConfOrt" id="selConfOrtID" placeholder="Ort eingeben" onchange="setOrt(this)">
-											  <span class="input-group-btn">
-											<button class="btn btn-secondary" type="button" onclick="setActualPlace()"><span class="glyphicon glyphicon-map-marker" ></button>
-										  </span>
+						</div>
+						<div id="step-2" class="">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon">Ort</span>
+										  <!--<select class="form-control" id="selConfArt">
+											<option>Welfengarten 1, ...</option>
+											<option>...</option>
+										  </select>-->
+										<input class="form-control" type="text"value="Welfengarten 1" name="selConfOrt" id="selConfOrtID" placeholder="Ort eingeben" onchange="setOrt(this)">
+										<span class="input-group-btn">
+											<button class="btn btn-secondary" type="button" onclick="setActualPlace()"><span class="glyphicon glyphicon-map-marker"></button>
+										</span>
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon">Dauer (Stunden)</span>
+										<input class="form-control" type="number" name="selConfPers" value="1" onchange="setDauer(this)" id="wizardDauer" />
+									</div>
+									<!--Useless?</div>-->
+									<div class="col-md-6">
+										<p>Datum: <input type="text" id="datepicker" onchange="setDatum(this)"></p>
+										<p>Zeit: <input type="text" onchange="setZeit(this)"></p>
+										<div>
+											<div class="space">
+												Preis: <span class="space" id="wizardStep2Price"></span>€
 											</div>
-											<div class="input-group">
-											  <span class="input-group-addon">Dauer (Stunden)</span>
-											  <input class="form-control" type="number" name="selConfPers" value="1" onchange="setDauer(this)" id="wizardDauer" />
-											</div>
-										</div>
-										<div class="col-md-6">
-											<p>Datum: <input type="text" id="datepicker" onchange="setDatum(this)"></p>
-					  <p>Zeit: <input type="text" onchange="setZeit(this)"></p>
-					  <div>
-						<div class="space">
-						   Preis: <span class="space" id="wizardStep2Price"></span>€
-					  </div>
-					</div>
 										</div>
 									</div>
+								</div>
 							</div>
-							<div id="step-3" class="">
-									<div class="row">
-										<div class="col-md-6">
-											<label>Zugang:</label>
-											<div class="form-group">
-												<div class="radio">
-												  <label><input value="Privat"type="radio" name="optradio" onchange="setZugang(this)">Privat</label>
-												</div>
-												<div class="radio">
-												  <label><input value="Öffentlich" type="radio" name="optradio" checked onchange="setZugang(this)">Öffentlich</label>
-												</div>
-											</div>
+						</div>
+						<div id="step-3" class="">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Zugang:</label>
+									<div class="form-group">
+										<div class="radio">
+											<label><input value="Privat"type="radio" name="optradio" onchange="setZugang(this)">Privat</label>
 										</div>
-										<div class="col-md-6">
-											<label>Bestückung:</label>
+										<div class="radio">
+											<label><input value="Öffentlich" type="radio" name="optradio" checked onchange="setZugang(this)">Öffentlich</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<label>Bestückung:</label>
 
-										<div class="form-group row">
-										  <label class="col-sm-4">DJ</label>
-										  <div class="col-sm-8">
+									<div class="form-group row">
+										<label class="col-sm-4">DJ</label>
+										<div class="col-sm-8">
 											<div class="form-check">
-											  <label class="form-check-label">
-												<input class="form-check-input" type="checkbox" onchange="setDJ(this)"> + 10,20€/h
-											  </label>
+												<label class="form-check-label">
+													<input class="form-check-input" type="checkbox" onchange="setDJ(this)"> + 10,20€/h
+												</label>
 											</div>
-										  </div>
-										  <label class="col-sm-4">Security</label>
-										  <div class="col-sm-8">
-											<div class="form-check">
-											  <label class="form-check-label">
-												<input class="form-check-input" type="checkbox" onchange="setSecurity(this)"> + 20,00€/h
-											  </label>
-											</div>
-										  </div>
-										  <label class="col-sm-4">Snacks</label>
-										  <div class="col-sm-8">
-											<div class="form-check">
-											  <label class="form-check-label">
-												<input class="form-check-input" type="checkbox" onchange="setSnacks(this)"> + 20,00€
-											  </label>
-											</div>
-										  </div>
-										  <label class="col-sm-4">Barkeeper</label>
-										  <div class="col-sm-8">
-											<div class="form-check">
-											  <label class="form-check-label">
-												<input class="form-check-input" type="checkbox" onchange="setBarkeeper(this)"> + 10,00€/h
-											  </label>
-											</div>
-										  </div>
-										   <label class="col-sm-4">Betrunkene</label>
-										   <input type="number" name="wizardDrunks" id="wizardBetrunkene" value="0" onchange="setBetrunkene(this)"> + 2,00€/h
 										</div>
-					   <div>
-					   <div class="space">
-					Preis: <span class="space" id="wizardStep3Price"></span>€
-					</div>
-					</div>
+										<label class="col-sm-4">Security</label>
+										<div class="col-sm-8">
+											<div class="form-check">
+												<label class="form-check-label">
+													<input class="form-check-input" type="checkbox" onchange="setSecurity(this)"> + 20,00€/h
+												</label>
+											</div>
+										</div>
+										<label class="col-sm-4">Snacks</label>
+										<div class="col-sm-8">
+											<div class="form-check">
+												<label class="form-check-label">
+													<input class="form-check-input" type="checkbox" onchange="setSnacks(this)"> + 20,00€
+												</label>
+											</div>
+										</div>
+										<label class="col-sm-4">Barkeeper</label>
+										<div class="col-sm-8">
+											<div class="form-check">
+												<label class="form-check-label">
+													<input class="form-check-input" type="checkbox" onchange="setBarkeeper(this)"> + 10,00€/h
+												</label>
+											</div>
+										</div>
+										<label class="col-sm-4">Betrunkene</label>
+										<input type="number" name="wizardDrunks" id="wizardBetrunkene" value="0" onchange="setBetrunkene(this)"> + 2,00€/h
+									</div>
+									<div>
+										<div class="space">
+											Preis: <span class="space" id="wizardStep3Price"></span>€
 										</div>
 									</div>
+								</div>
 							</div>
-							<div id="step-4" class="">
-									<div class="row">
-										<div class="col-md-3">
-											Typ: <span id="finalTyp"></span><br>
-											Art: <span id="finalArt"></span><br>
-											Personen: <span id="finalPerson"></span>
-										</div>
-										<div class="col-md-3">
-											Ort: <span id="finalOrt"></span><br>
-					  Datum: <span id="finalDatum"></span><br>
-											Zeit: <span id="finalZeit"></span><br>
-											Dauer: <span id="finalDauer"></span>
-										</div>
-										<div class="col-md-3">
-					<div id="data">
-											<p id="finalZugang"></p>
-											<p id="finalDj"></p>
-											<p id="finalSecurity"></p>
-											<p id="finalSnacks"></p>
-											<p id="finalBarkeeper"></p>
-											Betrunkene: <span id="finalBetrunkene"></span>
-					  </div>
-										</div>
-										<div class="col-md-3">
-					  <div class="space">
-											Preis: <span id="finalPreis"></span>€<br>
-											<button id="orderbtn" type="button" onclick="onOrder()" class="btn btn-primary">Jetzt kostenpflichtig buchen</button>
-					  </div>
-										</div>
+						</div>
+						<div id="step-4" class="">
+							<div class="row">
+								<div class="col-md-3">
+									Typ: <span id="finalTyp"></span><br>
+									Art: <span id="finalArt"></span><br>
+									Personen: <span id="finalPerson"></span>
+								</div>
+								<div class="col-md-3">
+									Ort: <span id="finalOrt"></span><br>
+									Datum: <span id="finalDatum"></span><br>
+									Zeit: <span id="finalZeit"></span><br>
+									Dauer: <span id="finalDauer"></span>
+								</div>
+								<div class="col-md-3">
+									<div id="data">
+										<p id="finalZugang"></p>
+										<p id="finalDj"></p>
+										<p id="finalSecurity"></p>
+										<p id="finalSnacks"></p>
+										<p id="finalBarkeeper"></p>
+										Betrunkene: <span id="finalBetrunkene"></span>
 									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="space">
+										Preis: <span id="finalPreis"></span>€<br>
+										<button id="orderbtn" type="button" onclick="onOrder()" class="btn btn-primary">Jetzt kostenpflichtig buchen</button>
+									</div>
+								</div>
 							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-
-			<hr>
-
-			
+			<hr>	
 		</div> <!-- /container -->
-<footer class="footer">
-		<div class="blub">
-		  <div id="busWrapper">
-			<div id="busImg">
-			  <img src="img/bus.png"/>
+
+		<footer class="footer">
+			<div class="blub">
+				<div id="busWrapper">
+					<div id="busImg">
+						<img src="img/bus.png"/>
+					</div>
+				</div>
 			</div>
-		  </div>
-		</div>
-	  </footer>
+		</footer>
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->
@@ -354,8 +353,8 @@
 		<script src="assets/js/jquery.smartWizard.min.js"></script>
 		<!-- Our custom JS -->
 		<script src="script.js"></script>
-	<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+		<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
 
-  <script src="jqueryui/jquery-ui.min.js"></script>
+		<script src="jqueryui/jquery-ui.min.js"></script>
 	</body>
 </html>

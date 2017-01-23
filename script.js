@@ -6,18 +6,19 @@ $(document).ready(function() {
 	$("#logout").hide();
 	$("#busWrapper").hide();
 
+
 	/**
 	*	Setup library-elements
 	*/
 	//enable all tooltips in document
-	$('[data-toggle="tooltip"]').tooltip(); 
+	$('[data-toggle="tooltip"]').tooltip();
 
 	$("#datepicker").datepicker({
 		dateFormat: "dd.mm.yy",
 		firstDay: 1,
 		minDate: +0
 	});
-	
+
 	$("#timepicker").wickedpicker({
 		twentyFour: true,
 		minutesInterval: 5
@@ -58,6 +59,7 @@ $(document).ready(function() {
          }
     });
 })
+
 
 function init(partybusSelected){
 	art = "Autonom";

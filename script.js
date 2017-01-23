@@ -1,9 +1,43 @@
 $(document).ready(function() {
+	/**
+	*	UI-"Init" via hiding
+	*/
 	$("#contentSteps").hide();
 	$("#logout").hide();
+	$("#busWrapper").hide();
 
+	/**
+	*	Setup library-elements
+	*/
+	//enable all tooltips in document
+	$('[data-toggle="tooltip"]').tooltip(); 
+
+	$("#datepicker").datepicker({
+		dateFormat: "dd.mm.yy",
+		firstDay: 1,
+		minDate: +0
+	});
+	
+	$("#timepicker").wickedpicker({
+		twentyFour: true,
+		minutesInterval: 5
+	});
+
+	wizard = $("#contentSteps > div").smartWizard({
+		theme: 'arrows',
+		transitionEffect: 'fade',
+		toolbarSettings: {
+			toolbarExtraButtons: [$('<button class="btn btn-danger" onclick="cancelWizard()">Cancel</button>')]
+		},
+		disabledSteps: [2]
+	});
+
+	/**
+	*	Handlers
+	*/
 	$("#addBooking").click(function(){
 		init(false);
+		calcPrice();
 		$("#contentMain").hide();
 		$("#busWrapper").hide();
 		$("#contentSteps").show();
@@ -11,34 +45,17 @@ $(document).ready(function() {
 
 	$("#addBookingPartybus").click(function(){
 		init(true);
+		calcPrice();
 		$("#contentMain").hide();
 		$("#busWrapper").hide();
 		$("#contentSteps").show();
 	})
-
-	$("#datepicker").datepicker();
-	$("#timepicker").wickedpicker({
-		twentyFour: true,
-		minutesInterval: 5
-	});
-
-	$("#contentSteps > div").smartWizard({
-		theme: 'arrows',
-		transitionEffect: 'fade',
-		toolbarSettings: {
-			toolbarExtraButtons: [$('<button class="btn btn-danger" onclick="cancelWizard()">Cancel</button>')]
-		}
-	});
 
 	$("#contentSteps > div").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
          if (stepNumber == 3){
          	finalConclusion();
          }
     });
-	init();
-	calcPrice();
-	$("#busWrapper").hide();
-
 })
 
 function init(partybusSelected){
@@ -46,9 +63,11 @@ function init(partybusSelected){
 	if (partybusSelected) {
 		typ = "Partybus";
 		$("#selConfTyp").val("Partybus");
+		partybusUI(true);
 	} else {
 		typ = "Kleinwagen";
 		$("#selConfTyp").val("Kleinwagen");
+		partybusUI(false);
 	}
 	person = "1";
 	ort = "Welfengarten 1";
@@ -62,7 +81,7 @@ function init(partybusSelected){
 	zeit = "15:00";
 	datum = "Heute";
 
-	$('#contentSteps > div').smartWizard("reset")
+	$(wizard).smartWizard("reset")
 
 }
 
@@ -153,11 +172,9 @@ function setDatum(variable){
 function setTyp(variable){
 	typ = variable.value;
 	if (typ == "Partybus"){
-		document.getElementById('selConfArt').value = "Autonom"
-		art = "Autonom";
-		document.getElementById('selConfArt').disabled = true;
+		partybusUI(true);
 	} else {
-		document.getElementById('selConfArt').disabled = false;
+		partybusUI(false);
 	}
 	calcPrice();
 }
@@ -246,7 +263,7 @@ function onOrder(variable){
 }
 
 function cancelWizard() {
-	$('#contentSteps > div').smartWizard("reset");
+	$(wizard).smartWizard("reset");
 	$("#contentMain").show();
 	$("#contentSteps").hide();
 }
@@ -269,4 +286,20 @@ function getCheckedRadio(name) {
 function loginToggle() {
 	$("#login").toggle();
 	$("#logout").toggle();
+}
+
+function partybusUI(isPartybus) {
+	if (isPartybus){
+		document.getElementById('selConfArt').value = "Autonom"
+		art = "Autonom";
+		document.getElementById('selConfArt').disabled = true;
+		//$("#step-3 input").prop('disabled', false);
+		//.prop('checked', false)
+		$(wizard).smartWizard("stepState", [2], "enable");
+	} else {
+		document.getElementById('selConfArt').disabled = false;
+		//$("#step-3 input").prop('disabled', false);
+		//.prop('checked', false)
+		$(wizard).smartWizard("stepState", [2], "disable");
+	}
 }

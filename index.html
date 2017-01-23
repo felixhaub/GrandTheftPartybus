@@ -168,7 +168,7 @@
 					<ul>
 						<li><a href="#step-1">Auto-Konfiguration</a></li>
 						<li><a href="#step-2">Ort und Zeit</a></li>
-						<li><a href="#step-3">Extras</a></li>
+						<li><a href="#step-3">Partybus-Extras</a></li>
 						<li><a href="#step-4" onclick="finalConclusion()">Zusammenfassung</a></li>
 					</ul>
 
@@ -193,11 +193,11 @@
 									</div>
 									<div class="input-group">
 									  <span class="input-group-addon">Anzahl Personen</span>
-									  <input class="form-control" type="number" name="selConfPers" value="1" id ="wizardPersons" onchange="setPerson(this)"/>
+									  <input data-toggle="tooltip" title="Inklusive Dir und exklusive DJ/Security/..." class="form-control" type="number" name="selConfPers" value="1" id ="wizardPersons" onchange="setPerson(this)"/>
 									</div>
 								</div>
 								<div class="col-md-8">
-									<div class="space">
+									<div class="space text-primary">
 									   Preis: <span class="space" id="wizardStep1PricePerHour"></span>€/Stunde
 									</div>
 								</div>
@@ -214,7 +214,7 @@
 										  </select>-->
 										<input class="form-control" type="text"value="Welfengarten 1" name="selConfOrt" id="selConfOrtID" placeholder="Ort eingeben" onchange="setOrt(this)">
 										<span class="input-group-btn">
-											<button class="btn btn-secondary" type="button" onclick="setActualPlace()"><span class="glyphicon glyphicon-map-marker"></button>
+											<button class="btn btn-secondary" type="button" onclick="setActualPlace()" data-toogle="tooltip" title="Aktuelle Position finden"><span class="glyphicon glyphicon-map-marker"></button>
 										</span>
 									</div>
 									<div class="input-group">
@@ -223,10 +223,16 @@
 									</div>
 								</div>
 								<div class="col-md-6">
-									<p>Datum: <input type="text" id="datepicker" onchange="setDatum(this)"></p>
-									<p>Zeit: <input id="timepicker" class="timepicker" type="text"></p>
+									<div class="input-group">
+										<span class="input-group-addon">Datum</span>
+										<input class="form-control" type="text" id="datepicker" onchange="setDatum(this)"/>
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon">Uhrzeit</span>
+										<input class="form-control" id="timepicker" class="timepicker" type="text"/>
+									</div>
 									<div>
-										<div class="space">
+										<div class="space text-primary">
 											Preis: <span class="space" id="wizardStep2Price"></span>€
 										</div>
 									</div>
@@ -239,7 +245,7 @@
 									<label>Zugang:</label>
 									<div class="form-group">
 										<div class="radio">
-											<label><input value="Privat"type="radio" name="optradio" onchange="setZugang(this)">Privat</label>
+											<label><input value="Privat" type="radio" name="optradio" onchange="setZugang(this)">Privat</label>
 										</div>
 										<div class="radio">
 											<label><input value="Öffentlich" type="radio" name="optradio" checked onchange="setZugang(this)">Öffentlich</label>
@@ -286,7 +292,7 @@
 										<input type="number" name="wizardDrunks" id="wizardBetrunkene" value="0" onchange="setBetrunkene(this)"> + 2,00€/h
 									</div>
 									<div>
-										<div class="space">
+										<div class="space text-primary">
 											Preis: <span class="space" id="wizardStep3Price"></span>€
 										</div>
 									</div>
@@ -317,7 +323,7 @@
 									</div>
 								</div>
 								<div class="col-md-3">
-									<div class="space">
+									<div class="space text-primary">
 										Preis: <span id="finalPreis"></span>€<br>
 										<button id="orderbtn" type="button" onclick="onOrder()" class="btn btn-primary">Jetzt kostenpflichtig buchen</button>
 									</div>

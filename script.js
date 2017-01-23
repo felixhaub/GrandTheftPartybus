@@ -49,6 +49,7 @@ $(document).ready(function() {
 		$("#contentMain").hide();
 		$("#busWrapper").hide();
 		$("#contentSteps").show();
+		$(wizard).smartWizard("stepState", [2], "enable");
 	})
 
 	$("#contentSteps > div").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
@@ -92,10 +93,10 @@ function finalConclusion(){
 	document.getElementById("finalArt").innerHTML = art;
 	document.getElementById("finalPerson").innerHTML = person;
 	document.getElementById("finalOrt").innerHTML = ort;
-	document.getElementById("finalDauer").innerHTML = dauer;
+	document.getElementById("finalDauer").innerHTML = dauer + " Stunde(n)";
 	// get chosen time from timepicker
 	zeit = $("#timepicker").wickedpicker('time');
-	document.getElementById("finalZeit").innerHTML = zeit;
+	document.getElementById("finalZeit").innerHTML = zeit + " Uhr";
 	document.getElementById("finalDatum").innerHTML = datum;
 	document.getElementById("finalZugang").innerHTML = zugang;
 }
